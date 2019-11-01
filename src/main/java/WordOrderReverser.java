@@ -1,23 +1,24 @@
+
+
 public class WordOrderReverser {
 
-    private static final String SENTENCE = "Ala ma kota burego";
+    public static void main(String[] args) {
 
-    private static String[] getWordSentence(){ return SENTENCE.split(" ");}
+        String SENTENCE = "Ala ma kota burego";
+        String[] splitedWords = SENTENCE.split(" ");
 
+        StringBuilder reversedSENTENCE = new StringBuilder();
 
-    public static void main(String[] args){
-
-        String reversedSentence = "";
-
-        for (int i = 0; i<getWordSentence().length; i++ ){
-            if(i == getWordSentence().length-1 )
-                reversedSentence = getWordSentence()[i] + reversedSentence;
-            else
-                reversedSentence = " " + getWordSentence()[i] + reversedSentence;
-
+        for (int i = splitedWords.length -1; i >= 0; i--){
+            reversedSENTENCE.append(splitedWords[i]);
+            if(i !=0){
+                reversedSENTENCE.append(" ");
+            }
         }
-        System.out.println(reversedSentence);
+        System.out.println(reversedSENTENCE);
+
     }
+
 
 
 
